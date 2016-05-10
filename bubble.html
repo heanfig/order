@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script   src="https://code.jquery.com/jquery-1.12.3.js"   integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc="   crossorigin="anonymous"></script>
+	<title>BubbleSort</title>
+	<style type="text/css">
+		.canvas {
+		    background: #CACACA;
+		    width: 560px;
+		    margin: 0 auto;
+		    height: 300px;
+		    transform: rotate(180deg);
+		}
+		.plot {
+		    width: 38px;
+		    height: 100%;
+		    float: left;
+		    border: 1px solid red;
+		    background: black;
+		}
+		.buttons {
+		    text-align: center;
+		    margin-top: 21px;
+		}
+	</style>
+</head>
+<body>
+	<div class="canvas">
+		<div class="plot">&nbsp;</div>
+		<div class="plot">&nbsp;</div>
+		<div class="plot">&nbsp;</div>
+		<div class="plot">&nbsp;</div>
+		<div class="plot">&nbsp;</div>
+		<div class="plot">&nbsp;</div>
+		<div class="plot">&nbsp;</div>
+		<div class="plot">&nbsp;</div>
+		<div class="plot">&nbsp;</div>
+		<div class="plot">&nbsp;</div>
+		<div class="plot">&nbsp;</div>
+		<div class="plot">&nbsp;</div>
+		<div class="plot">&nbsp;</div>
+		<div class="plot">&nbsp;</div>
+	</div>
+	<div class="buttons">
+		<input type="button" value="mutable" class="x">
+		<input type="button" value="order" class="y">
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$(".x").click(function(){
+				var max = $(".plot").length;
+				var wcanvas = $(".canvas").width();
+				for(var i=0; i< max; i++){
+					var range = Math.random() * ( $(".canvas").height() - 10 ) + 10;
+					$(".plot").eq(i).height(range);
+				}
+			});
+
+			$(".y").click(function(){
+				var max = $(".plot").length;
+				for(var i=0; i< max; i++){
+					for(var z=0; z< max-1; z++){
+						if( $(".plot").eq(z).height() > $(".plot").eq(z+1).height()){
+							var aux = $(".plot").eq(z).height();
+							$(".plot").eq(z).height($(".plot").eq(z+1).height());
+							$(".plot").eq(z+1).height(aux);		
+						}
+					}
+				}
+			});
+
+		});
+	</script>
+</body>
+</html>
