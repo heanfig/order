@@ -5,7 +5,9 @@ A sorting algorithm is an algorithm that puts elements of a list in a certain or
 * [Bubble sort] - Bubble sort is a simple sorting algorithm. The algorithm starts at the beginning of the data set. It compares the first two elements, and if the first is greater than the second, it swaps them.
 
 > Mutable
-![Order](./mutable.jpg);
+![Order](./mutable.jpg)
 
 > Order
-![Order](./order.jpg);
+![Order](./order.jpg)
+
+[Demo](http://dmsanchez86.github.io/order/bubble.html)
